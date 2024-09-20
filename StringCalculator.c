@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include "StringCalculator.h"
 
 int add(const char* numbers) {
     if (numbers == NULL || strlen(numbers) == 0) {
