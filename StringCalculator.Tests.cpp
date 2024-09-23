@@ -52,16 +52,14 @@ TEST(StringCalculatorTests, ExpectSumWithNewlineDelimiter) {
 // Test for handling negative numbers, expecting exception or error
 TEST(StringCalculatorTests, NegativeNumbersRaiseException) {
     const char* input = "1,-2,-3";
+    char error_message[256] = {0};  // Buffer for error message
 
-    try {
-        int result = add(input);
-        FAIL() << "Expected an exception due to negative numbers";
-    } catch (const std::invalid_argument& e) {
-        ASSERT_STREQ(e.what(), "Negative numbers are not allowed: -2, -3");
-    } catch (...) {
-        FAIL() << "Expected std::invalid_argument due to negative numbers";
-    }
+    int result = add(input, error_message);
+
+    ASSERT_EQ(result, -1);  // Check if an error occurred
+    ASSERT_STREQ(error_message, "Negative numbers not allowed: -2 -3");  // Check the error message
 }
+
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
