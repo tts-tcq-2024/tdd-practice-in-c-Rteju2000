@@ -1,0 +1,8 @@
+"Test Scenario			","Test Case ID	",Test case name,Test Input,Test Output
+ReturnsZeroForEmptyString,TC001,test_ZeroForEmptyInput,"""""",0
+"ReturnsZeroForSingleZero			",TC002,test_ZeroForSingleInput,"""0""",0
+"ReturnsSumForTwoNumbers	",TC003,test_SumOfTwoNumbers,"""3,4""",7
+"IgnoresNumbersAbove1000	",TC004,test_ignoreNumbersGreaterThan1000,"""1,1001""",1
+"CustomDelimiterTest	",TC005,test_SumWithCustomDelimiter,"""//|\n5|6""",11
+NewlineDelimiterTest,TC006,test_SumWithNewlineDelimiter,"""4\n5\n6\n7""",22
+NegativeNumbersTriggerError,TC007,test_negativeNumbersRaiseException,"""1,-2,-3""","Exception: ""Negative numbers are not allowed"""
